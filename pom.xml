@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ar.com.bds</groupId>
+    <artifactId>scheduler</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <name>scheduler</name>
+
+    <parent>
+        <groupId>ar.com.bds.assets</groupId>
+        <artifactId>bds-parent-springboot</artifactId>
+        <version>1.10.1</version>
+    </parent>
+
+    <properties>
+        <shedlock.version>4.34.0</shedlock.version>
+
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.2</version> <!-- La versión puede variar -->
+        </dependency>
+        <dependency>
+            <groupId>net.javacrumbs.shedlock</groupId>
+            <artifactId>shedlock-spring</artifactId>
+            <version>${shedlock.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.javacrumbs.shedlock</groupId>
+            <artifactId>shedlock-provider-mongo</artifactId>
+            <version>${shedlock.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+    </dependencies>
+
+    <scm>
+        <url>${scm.base}${project.artifactId}</url>
+        <connection>${scm.base}${project.artifactId}.git</connection>
+        <developerConnection>${scm.base}${project.artifactId}.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <build>
+        <finalName>scheduler</finalName>
+    </build>
+
+</project>
